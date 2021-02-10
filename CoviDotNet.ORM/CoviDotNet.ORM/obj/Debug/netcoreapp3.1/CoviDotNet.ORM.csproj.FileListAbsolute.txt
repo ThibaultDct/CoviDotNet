@@ -1,0 +1,12 @@
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\bin\Debug\netcoreapp3.1\CoviDotNet.ORM.deps.json
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\bin\Debug\netcoreapp3.1\CoviDotNet.ORM.runtimeconfig.json
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\bin\Debug\netcoreapp3.1\CoviDotNet.ORM.runtimeconfig.dev.json
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\bin\Debug\netcoreapp3.1\CoviDotNet.ORM.dll
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\bin\Debug\netcoreapp3.1\CoviDotNet.ORM.pdb
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.csprojAssemblyReference.cache
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.AssemblyInfoInputs.cache
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.AssemblyInfo.cs
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.csproj.CoreCompileInputs.cache
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.dll
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.pdb
+C:\Users\mepie\source\repos\CoviDotNet.ORM\CoviDotNet.ORM\obj\Debug\netcoreapp3.1\CoviDotNet.ORM.genruntimeconfig.cache
