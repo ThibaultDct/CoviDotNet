@@ -1,27 +1,30 @@
-﻿using CoviDotNet.ORM;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using CoviDotNet.ORM;
 
 namespace CoviDotNet.Web.Controllers
 {
-    public class PersonController : Controller
+    public class VaccinesController : Controller
     {
-        private readonly Context _context = new Context();
+        private readonly Context _context;
 
-        /*public PersonController(Context context)
+        public VaccinesController(Context context)
         {
             _context = context;
-        }*/
-
-        // GET: Person
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Persons.ToListAsync());
         }
 
-        // GET: Person/Details/5
+        // GET: Vaccines
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Vaccines.ToListAsync());
+        }
+
+        // GET: Vaccines/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -29,39 +32,39 @@ namespace CoviDotNet.Web.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Persons
-                .FirstOrDefaultAsync(m => m.PersonId == id);
-            if (person == null)
+            var vaccine = await _context.Vaccines
+                .FirstOrDefaultAsync(m => m.VaccineId == id);
+            if (vaccine == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(vaccine);
         }
 
-        // GET: Person/Create
+        // GET: Vaccines/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Person/Create
+        // POST: Vaccines/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,Lastname,Firstname,BirthDate,Sex,IsResident")] Person person)
+        public async Task<IActionResult> Create([Bind("VaccineId,Brand,Disease,ExpirationDate,ValidityPeriod")] Vaccine vaccine)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(person);
+                _context.Add(vaccine);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(vaccine);
         }
 
-        // GET: Person/Edit/5
+        // GET: Vaccines/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -69,22 +72,22 @@ namespace CoviDotNet.Web.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Persons.FindAsync(id);
-            if (person == null)
+            var vaccine = await _context.Vaccines.FindAsync(id);
+            if (vaccine == null)
             {
                 return NotFound();
             }
-            return View(person);
+            return View(vaccine);
         }
 
-        // POST: Person/Edit/5
+        // POST: Vaccines/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PersonId,Lastname,Firstname,BirthDate,Sex,IsResident")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("VaccineId,Brand,Disease,ExpirationDate,ValidityPeriod")] Vaccine vaccine)
         {
-            if (id != person.PersonId)
+            if (id != vaccine.VaccineId)
             {
                 return NotFound();
             }
@@ -93,12 +96,12 @@ namespace CoviDotNet.Web.Controllers
             {
                 try
                 {
-                    _context.Update(person);
+                    _context.Update(vaccine);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonId))
+                    if (!VaccineExists(vaccine.VaccineId))
                     {
                         return NotFound();
                     }
@@ -109,10 +112,10 @@ namespace CoviDotNet.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(vaccine);
         }
 
-        // GET: Person/Delete/5
+        // GET: Vaccines/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -120,30 +123,30 @@ namespace CoviDotNet.Web.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Persons
-                .FirstOrDefaultAsync(m => m.PersonId == id);
-            if (person == null)
+            var vaccine = await _context.Vaccines
+                .FirstOrDefaultAsync(m => m.VaccineId == id);
+            if (vaccine == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(vaccine);
         }
 
-        // POST: Person/Delete/5
+        // POST: Vaccines/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var person = await _context.Persons.FindAsync(id);
-            _context.Persons.Remove(person);
+            var vaccine = await _context.Vaccines.FindAsync(id);
+            _context.Vaccines.Remove(vaccine);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(int id)
+        private bool VaccineExists(int id)
         {
-            return _context.Persons.Any(e => e.PersonId == id);
+            return _context.Vaccines.Any(e => e.VaccineId == id);
         }
     }
 }
