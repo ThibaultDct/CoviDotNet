@@ -45,6 +45,7 @@ namespace CoviDotNet.Web.Controllers
         // GET: Vaccinations/Create
         public IActionResult Create()
         {
+            ViewBag.ListPersons = _context.Persons.Select(x => new SelectListItem { Text = x.Lastname + " " + x.Firstname, Value = x.PersonId.ToString() }).ToList();
             return View();
         }
 
