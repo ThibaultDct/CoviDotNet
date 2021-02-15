@@ -23,6 +23,7 @@ namespace CoviDotNet.Web.Controllers
         public async Task<IActionResult> Index(int Id)
         {
             ViewBag.ListPersons = _context.Persons.Select(x => new SelectListItem { Text = x.Lastname + " " + x.Firstname + " (" + x.PersonId + ")", Value = x.PersonId.ToString() }).ToList();
+            ViewBag.ListPersons.Add(new SelectListItem { Text = "-- SELECT PERSON --", Value = null, Selected = true });
             if (Id == null)
             {
                 return View(_context.Vaccinations.ToListAsync());
