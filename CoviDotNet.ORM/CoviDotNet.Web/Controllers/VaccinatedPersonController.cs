@@ -10,19 +10,29 @@ using Microsoft.AspNetCore.Http;
 
 namespace CoviDotNet.Web.Controllers
 {
-    public class VaccinationsController : Controller
+    public class VaccinatedPersonController : Controller
     {
         private readonly Context _context;
 
-        public VaccinationsController(Context context)
+        public VaccinatedPersonController(Context context)
         {
             _context = context;
         }
 
         // GET: Vaccinations
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int Id)
         {
-            return View(await _context.Vaccinations.ToListAsync());
+            ViewBag.ListPersons = _context.Persons.Select(x => new SelectListItem { Text = x.Lastname + " " + x.Firstname + " (" + x.PersonId + ")", Value = x.PersonId.ToString() }).ToList();
+            ViewBag.ListPersons.Add(new SelectListItem { Text = "-- SELECT PERSON --", Value = null, Selected = true });
+            if (Id == null)
+            {
+                return View(_context.Vaccinations.ToListAsync());
+            } else
+            {
+                var vaccinations = from v in _context.Vaccinations select v;
+                vaccinations = vaccinations.Where(s => s.Person.PersonId.Equals(Id));
+                return View(await vaccinations.ToListAsync());
+            }
         }
 
         // GET: Vaccinations/Details/5

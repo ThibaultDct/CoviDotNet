@@ -11,29 +11,29 @@
     <h4>Vaccination</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.VaccinationDate)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.VaccinationDate)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lot)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Lot)
-        </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReminderDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReminderDate)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
-        <input type="hidden" asp-for="VaccinationId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        >
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VaccinationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lot)
+        </dt>
+        <dd class="col-sm-10">
+            <input type="hidden" asp-for="VaccinationId" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
     </form>
 </div>
