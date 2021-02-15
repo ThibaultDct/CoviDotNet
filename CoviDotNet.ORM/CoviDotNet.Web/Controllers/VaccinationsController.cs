@@ -47,6 +47,7 @@ namespace CoviDotNet.Web.Controllers
         public IActionResult Create()
         {
             ViewBag.ListPersons = _context.Persons.Select(x => new SelectListItem { Text = x.Lastname + " " + x.Firstname + " (" + x.PersonId + ")", Value = x.PersonId.ToString() }).ToList();
+            ViewBag.ListVaccines = _context.Vaccines.Select(x => new SelectListItem { Text = x.Brand + " (" + x.VaccineType + ")", Value = x.VaccineId.ToString() }).ToList();
             return View();
         }
 
@@ -68,6 +69,7 @@ namespace CoviDotNet.Web.Controllers
             //return View(vaccination);
             Vaccination vaccination = new Vaccination();
             vaccination.Person = _context.Persons.Find(int.Parse(values["Person"]));
+            vaccination.Vaccine = _context.Vaccines.Find(int.Parse(values["Vaccine"]));
             vaccination.VaccinationDate = DateTime.Parse(values["VaccinationDate"]);
             vaccination.Lot = values["Lot"];
             vaccination.ReminderDate = DateTime.Parse(values["ReminderDate"]);

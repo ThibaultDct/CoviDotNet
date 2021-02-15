@@ -13,7 +13,7 @@ namespace CoviDotNet.ORM
 
         public string Brand { get; set; }
 
-        public string Disease { get; set; }
+        public string VaccineType { get; set; }
 
         public DateTime ExpirationDate { get; set; }
 

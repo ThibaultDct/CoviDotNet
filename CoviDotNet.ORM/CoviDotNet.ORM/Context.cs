@@ -10,6 +10,7 @@ namespace CoviDotNet.ORM
         public DbSet<Person> Persons { get; set; }
         public DbSet<Vaccination> Vaccinations { get; set; }
         public DbSet<Vaccine> Vaccines { get; set; }
+        public DbSet<VaccineType> VaccineTypes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

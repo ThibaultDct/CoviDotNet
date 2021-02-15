@@ -13,13 +13,10 @@ namespace CoviDotNet.Web.Controllers
     {
         private readonly Context _context = new Context();
 
-
-        //private readonly Context _context;
-
-        //public VaccineTypesController(Context context)
-        //{
-        //    _context = context;
-        //}
+        public VaccineTypesController(Context context)
+        {
+            _context = context;
+        }
 
         // GET: VaccineTypes
         public async Task<IActionResult> Index()

@@ -45,6 +45,7 @@ namespace CoviDotNet.Web.Controllers
         // GET: Vaccines/Create
         public IActionResult Create()
         {
+            ViewBag.ListVaccineTypes = _context.VaccineTypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Name }).ToList();
             return View();
         }
 
@@ -53,7 +54,7 @@ namespace CoviDotNet.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VaccineId,Brand,Disease,ExpirationDate,ValidityPeriod")] Vaccine vaccine)
+        public async Task<IActionResult> Create([Bind("VaccineId,Brand,VaccineType,ExpirationDate,ValidityPeriod")] Vaccine vaccine)
         {
             if (ModelState.IsValid)
             {

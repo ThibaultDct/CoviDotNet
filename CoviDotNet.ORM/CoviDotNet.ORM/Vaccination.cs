@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace CoviDotNet.ORM
@@ -20,6 +21,5 @@ namespace CoviDotNet.ORM
         public string Lot { get; set; }
 
         public DateTime ReminderDate { get; set; }
-
     }
 }
