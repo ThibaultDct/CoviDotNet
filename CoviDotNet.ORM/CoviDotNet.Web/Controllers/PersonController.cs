@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CoviDotNet.ORM;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CoviDotNet.ORM;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CoviDotNet.Web.Controllers
 {
@@ -13,15 +11,23 @@ namespace CoviDotNet.Web.Controllers
     {
         private readonly Context _context = new Context();
 
-        /*public PersonController(Context context)
+        //public PersonController(Context context)
+        //{
+        //    _context = context;
+        //    ViewBag.ListPersons = _context.Persons.Select(x => new SelectListItem { Text = x.Lastname, Value = x.Lastname }).ToList();
+        //}
+
+        public ActionResult DropdownBinding()
         {
-            _context = context;
-        }*/
+            ViewBag.PersonsList = _context.Persons.Select(c => new SelectListItem { Text = c.ToString(), Value = c.ToString() });
+            return View();
+        }
 
         // GET: Person
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Persons.ToListAsync());
+            ViewBag.Persons = await _context.Persons.ToListAsync();
+            return View(ViewBag.Persons);
         }
 
         // GET: Person/Details/5
@@ -148,5 +154,5 @@ namespace CoviDotNet.Web.Controllers
         {
             return _context.Persons.Any(e => e.PersonId == id);
         }
-    }
+}
 }

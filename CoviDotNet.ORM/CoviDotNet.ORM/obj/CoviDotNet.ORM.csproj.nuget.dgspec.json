@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mepie\\source\\repos\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj": {}
+    "C:\\Users\\mepie\\source\\repos\\ThibaultDct\\CoviDotNet\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mepie\\source\\repos\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj": {
+    "C:\\Users\\mepie\\source\\repos\\ThibaultDct\\CoviDotNet\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mepie\\source\\repos\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj",
+        "projectUniqueName": "C:\\Users\\mepie\\source\\repos\\ThibaultDct\\CoviDotNet\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj",
         "projectName": "CoviDotNet.ORM",
-        "projectPath": "C:\\Users\\mepie\\source\\repos\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj",
+        "projectPath": "C:\\Users\\mepie\\source\\repos\\ThibaultDct\\CoviDotNet\\CoviDotNet.ORM\\CoviDotNet.ORM\\CoviDotNet.ORM.csproj",
         "packagesPath": "C:\\Users\\mepie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mepie\\source\\repos\\CoviDotNet.ORM\\CoviDotNet.ORM\\obj\\",
+        "outputPath": "C:\\Users\\mepie\\source\\repos\\ThibaultDct\\CoviDotNet\\CoviDotNet.ORM\\CoviDotNet.ORM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

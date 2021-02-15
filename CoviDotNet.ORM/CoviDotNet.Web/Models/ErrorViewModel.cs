@@ -1,5 +1,3 @@
-using System;
-
 namespace CoviDotNet.Web.Models
 {
     public class ErrorViewModel
